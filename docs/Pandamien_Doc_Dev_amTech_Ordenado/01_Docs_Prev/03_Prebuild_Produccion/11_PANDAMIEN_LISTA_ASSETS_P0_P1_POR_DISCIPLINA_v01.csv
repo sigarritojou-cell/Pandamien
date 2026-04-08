@@ -1,0 +1,43 @@
+Asset ID,Disciplina,Prioridad,Asset,Descripción,Depende de,Definition of Done
+AST-001,Entorno,P0,Layout canónico del apartamento,"Whitebox/bloqueo final con salón, dormitorio, baño, cocina, entrada, pasillo y balcón/ventana principal.",-,Se recorre completo y soporta loop C01–C06.
+AST-002,Entorno,P0,Puerta atrancada + marco,"Modelo base, colocación final y relación clara con pasillo.",AST-001,La puerta existe como foco espacial central y encaja con interacción base.
+AST-003,Entorno,P0,Puerta principal + rellano sugerido,"Puerta funcional, marco, felpudo y lectura del borde.",AST-001,"Se soportan mirilla, sonido y eventos de umbral P0."
+AST-004,Entorno,P0,Baño funcional,"Espacio base con espejo, lavabo, ducha/WC y puntos de lectura corporal.",AST-001,Baño soporta C03 y contaminación P0.
+AST-005,Entorno,P0,Dormitorio funcional,"Cama, circulación, zona íntima y lectura de descanso/herida.",AST-001,Dormitorio soporta C03–C04 y finales íntimos.
+AST-006,Entorno,P0,Salón funcional,"TV, sofá/asiento principal, mesa y zona de trabajo básica.",AST-001,"Salón soporta TV, C01–C02 y C06."
+AST-007,Entorno,P0,Cocina funcional mínima,"Nevera, fregadero, superficie de apoyo y lectura de rutina.",AST-001,"Cocina soporta banalidad, hambre y abandono."
+AST-008,Entorno,P0,Pasillo jugable,"Compresión espacial, tránsito y foco de puerta.",AST-001,Pasillo sostiene C05–C06 y finales de borde.
+AST-009,Entorno,P0,Ventana/balcón principal,Sistema visual y espacial básico de exterioridad.,AST-001,"Permite aire, exposición y eco exterior."
+AST-010,Tech Art,P0,Sistema de contaminación por zonas,"Swaps/overlays para baño, dormitorio, salón y entrada/pasillo.",AST-001,Hay 3 niveles legibles por zona.
+AST-011,Tech Art,P0,Estados materiales del marco,3–4 estados visibles del marco/puerta sellada.,AST-002,Cambios son legibles y ligados a variables.
+AST-012,Tech Art,P1,Contaminación fina por zona,Variantes extra por materialidad húmeda/orgánica/funcional.,AST-010,Hay más riqueza sin romper coherencia.
+AST-013,Interacción,P0,Móvil diegético,"Contenedor de mensajes, audios, llamadas e historial.",AST-006,Se puede resolver authored básico.
+AST-014,Interacción,P0,Mirilla funcional,Entrada a lectura de umbral.,AST-003,"Se activa, devuelve feedback y condiciona eventos."
+AST-015,Interacción,P0,Puntos de interacción base,"TV, puerta sellada, puerta principal, props P0, cama, espejo.",AST-001,Todos los puntos críticos son interactuables.
+AST-016,Interacción,P1,Interacciones de contención adicionales,Variantes de limpiar/contener/retirar en zonas extra.,AST-010,Se amplía sin duplicar mecánicas.
+AST-017,Props,P0,TV física,"Pantalla, mueble/soporte y presencia visual coherente.",AST-006,La TV se integra física y sonoramente.
+AST-018,Props,P0,Cama,Prop central de descanso/intimidad.,AST-005,Soporta lectura de C03–C04.
+AST-019,Props,P0,Espejo de baño,Lectura corporal y foco de vulnerabilidad.,AST-004,Se usa como punto de lectura y eco.
+AST-020,Props,P0,Mesa/superficie de trabajo,Soporte de portátil o trabajo residual.,AST-006,Hace legible la deuda funcional.
+AST-021,Props,P0,Medicación/objeto corporal,Prop de cuerpo/cuidado.,AST-004,Se integra con C03.
+AST-022,Props,P0,2 props íntimos,Objetos personales de dormitorio/relación.,AST-005,Dejan huella emocional sin exceso de lore.
+AST-023,Props,P0,2 props de trabajo,Objetos funcionales ligados a editor/deuda.,AST-006,Refuerzan la colonización laboral del salón.
+AST-024,Props,P1,Props de balcón/pareja-ex,Detalle material de intimidad y exposición.,"AST-009, AST-022",Enriquecen C04 sin ser bloqueantes.
+AST-025,Props,P1,Props de umbral/exterior,"Paquete, bolsa, nota o equivalente authored.",AST-003,Exterior gana concreción sin inflarse.
+AST-026,Audio,P0,Soundscape del apartamento,"Nevera, tuberías, tejidos, electricidad, vacío doméstico.",AST-001,El piso suena vivo y localizado.
+AST-027,Audio,P0,Soundscape de rellano/patio/calle,"Pasos, voces, luces, ambulancia, rumor vecinal.","AST-003, AST-009",El exterior existe sin sobrerrepresentarse.
+AST-028,Audio,P0,Banco criatura P0,"Respiración, latido, golpe seco, sílaba rota, silencio atento.",AST-002,La puerta devuelve gramática no visible.
+AST-029,Audio,P0,Banco TV P0,"Comfort, suggestion, manipulation, residual.",AST-017,La TV ya funciona por estados.
+AST-030,Audio,P1,Banco exterior authored ampliado,"Voces amortiguadas, paquete, sombra, aire expuesto, barandilla.",AST-027,C05–C06 ganan variedad.
+AST-031,Iluminación,P0,Presets día/tarde/noche,Lectura temporal y emocional por franja.,AST-001,El tiempo del piso se siente.
+AST-032,Iluminación,P0,Glow residual TV,Contamina salón/pasillo sin dominarlo todo.,AST-017,La TV deja rastro incluso apagada o residual.
+AST-033,Iluminación,P0,Lectura de pasillo/puerta,Control de foco en umbral y finales.,"AST-002, AST-008",Pasillo y puerta tienen peso dramático.
+AST-034,Iluminación,P1,Presets finos por ciclo,Matices por C03–C06.,AST-031,Los ciclos se distinguen mejor sin rediseño completo.
+AST-035,Narrativa/Contenido,P0,Biblioteca TV C01–C06,Líneas suficientes por estados y ciclos.,AST-029,La TV sostiene 6 ciclos sin repetición grosera.
+AST-036,Narrativa/Contenido,P0,Authored C01–C06,"Nodos, ecos y fichas integradas.","AST-013, AST-015",C01–C06 se juegan completos.
+AST-037,Narrativa/Contenido,P0,Banco final MVP,Líneas/remates de P01/P05/P02/P10.,AST-028,Las 4 rutas finales distinguen voz y cierre.
+AST-038,Narrativa/Contenido,P1,Refuerzo authored exterior,Eventos P1 de umbral/balcón/ventana.,"AST-030, AST-036",Exterior gana densidad sin creep.
+AST-039,Sistemas,P0,Variables core runtime,"Persistencia de vínculo, TV, exterior, contaminación, criatura y final.",-,El runtime ya puede leer y escribir estado canónico.
+AST-040,Sistemas,P0,Selector de perfil final MVP,P01/P05/P02/P10.,"AST-039, AST-036",El juego puede elegir la ruta final correcta.
+AST-041,Sistemas,P0,Sistema de loop día/noche,"Transición, cierre y persistencia.",AST-039,El slice C01–C06 es jugable como secuencia real.
+AST-042,Sistemas,P1,Herramientas QA/debug,"Forzado de estados, saltos de ciclo y selector de final.",AST-039,QA puede testear sin tortura manual.

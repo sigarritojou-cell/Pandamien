@@ -1,0 +1,36 @@
+Feature ID,Feature,Description,Disciplines,Size,Priority,Depends On,Acceptance
+FEAT-001,Core state & save,"Estado persistente de partida, variables P0, guardado/carga y perfil de progreso.","Tech, Systems",L,P0,-,"Se guarda y restaura progreso de ciclos, zonas, vínculos, TV, criatura y flags de final."
+FEAT-002,Debug & telemetry panel,"Panel debug para variables, zonas, final selectors y triggers authored.","Tech, Systems, QA",M,P0,FEAT-001,Permite inspeccionar/forzar estado y acelerar test de rutas.
+FEAT-003,Apartment whitebox final,Layout jugable del apartamento con circulación canónica.,"Environment, Tech",L,P0,-,"Salón, dormitorio, baño, cocina, entrada, pasillo y balcón/ventana se recorren completos."
+FEAT-004,Interaction base,"Mirar, escuchar, activar, tocar, usar puntos de interacción y navegación estable.","Gameplay, Tech",L,P0,FEAT-003,El jugador puede recorrer e interactuar sin bloqueos ni fricción accidental.
+FEAT-005,Lighting presets,"Presets de luz para día, tarde, noche y glow residual de TV.","Lighting, Environment",M,P0,FEAT-003,Cambios temporales y climáticos son legibles y consistentes.
+FEAT-006,Apartment soundscape,"Audio espacial base del piso, patio, rellano, electrodomésticos y tejidos.","Audio, Tech",L,P0,FEAT-003,El piso suena vivo y localizado por zonas/franjas.
+FEAT-007,Props P0,"Props imprescindibles: cama, móvil, TV, sofá, mesa, espejo, lavabo/ducha/WC, nevera/fregadero, puerta principal, medicación, props íntimos y de trabajo.","Environment, Interaction",L,P0,"FEAT-003, FEAT-004",Todos los props P0 existen y soportan lectura/interacción básica.
+FEAT-008,Sealed door system,Puerta atrancada + marco con estados materiales y reactividad básica.,"Gameplay, Environment, Tech Art",L,P0,"FEAT-003, FEAT-004","La puerta ya funciona como sistema, no como decorado."
+FEAT-009,Zone contamination,Estados de contaminación por zonas con 3 niveles legibles y swaps/overlays.,"Tech Art, Systems, Environment",L,P0,"FEAT-003, FEAT-007","Baño, dormitorio, salón y entrada/pasillo cambian según variables."
+FEAT-010,Partial containment,Acción de contención/limpieza parcial por foco con coste y desplazamiento de consecuencia.,"Gameplay, Systems, Narrative",M,P0,FEAT-009,El jugador contiene una cosa y deja otra fermentar.
+FEAT-011,Day-night loop,Gestor de transición día → noche → cierre → persistencia.,"Systems, Tech",L,P0,"FEAT-001, FEAT-009",El loop avanza de forma fiable entre ciclos.
+FEAT-012,Diegetic phone,"UI diegética de móvil para mensajes, audios, llamadas, historial y respuestas.","UI Diegética, Tech, Gameplay",L,P0,"FEAT-004, FEAT-001",Se pueden disparar y resolver beats relacionales authored.
+FEAT-013,Authored node runner,"Runner de nodos de diálogo, ecos y beats authored.","Gameplay, Tech, Narrative Systems",L,P0,FEAT-012,Carga datos authored y resuelve opciones/efectos.
+FEAT-014,Cross-effects runtime,"Aplicación runtime de efectos cruzados entre vínculo, zona, TV, criatura, puerta y exterior.","Systems, Tech",L,P0,"FEAT-013, FEAT-001",Toda decisión authored deja huella sistémica trazable.
+FEAT-015,TV runtime P0,Televisión con estados comfort/suggestion/manipulation/residual y control básico de reproducción.,"TV Design, Tech, Audio",L,P0,"FEAT-004, FEAT-005","La TV acompaña, sugiere y manipula según estado/ciclo."
+FEAT-016,Exterior & threshold P0,"Mirilla, puerta principal, rellano sugerido, ventana/balcón y soundscape de borde.","Environment, Audio, Gameplay",L,P0,"FEAT-003, FEAT-006, FEAT-007","El umbral ya puede ser jugado, escuchado y leído."
+FEAT-017,Creature runtime core,Variables core de criatura: mass/cohesion/visibility + func_* y temper_* mínimos.,"Systems, Tech",M,P0,"FEAT-001, FEAT-014",La criatura existe en sistema y puede perfilarse.
+FEAT-018,Creature manifestation grammar,"Respiración, golpe, sílaba, latido, silencio atento y reactividad de marco.","Audio, Experience, Gameplay",L,P0,"FEAT-008, FEAT-017",La criatura devuelve tipos de presencia distintos sin mostrarse del todo.
+FEAT-019,Cycles C01-C02,Integración authored jugable de C01 y C02 completos.,"Narrative, Tech, Systems",L,P0,"FEAT-011, FEAT-013, FEAT-014, FEAT-015, FEAT-018",Primer vertical slice funcional del loop cotidiano → noche.
+FEAT-020,Cycles C03-C04,Integración authored jugable de C03 y C04 completos.,"Narrative, Tech, Systems, Audio",L,P0,FEAT-019,Cuerpo e intimidad ya pesan y devuelven puerta orgánica/torácica.
+FEAT-021,Cycles C05-C06,Integración authored jugable de C05 y C06 completos.,"Narrative, Tech, Systems, Audio",XL,P0,"FEAT-020, FEAT-016, FEAT-015",Umbral y colonización semántica funcionan con claridad.
+FEAT-022,TV library MVP,Carga de librería TV para C01–C06 por estados y familias de programa.,"TV Design, Writing, Audio",L,P0,"FEAT-015, FEAT-019, FEAT-020, FEAT-021",La TV tiene suficiente texto/tono para sostener 6 ciclos.
+FEAT-023,Exterior events MVP,Paquete de fenómenos authored P0/P1 de exterior para C01–C06.,"Exterioridad, Audio, Narrative",M,P1,"FEAT-016, FEAT-019, FEAT-021","Paquetes, pasos, luces, voces amortiguadas y aire expuesto tienen variedad suficiente."
+FEAT-024,Snapshot & final selector,Snapshot de partida y selección de perfil final MVP.,"Systems, Tech",M,P0,"FEAT-017, FEAT-021",El juego elige entre P01/P05/P02/P10 con lógica depurable.
+FEAT-025,Final local variables & locks,Contadores locales del final y locks mínimos.,"Systems, Tech",M,P0,FEAT-024,El final reacciona a verbos duros y estados acumulados.
+FEAT-026,Final Route A P01→C01,Ruta íntima de contención ética.,"Narrative, Gameplay, Audio, Lighting",M,P0,"FEAT-024, FEAT-025, FEAT-008, FEAT-018","Se juega completa con mano, calor, latido y remate."
+FEAT-027,Final Route B P05→C02,Ruta dialogada de apertura íntima.,"Narrative, Gameplay, Audio, Lighting",M,P0,"FEAT-024, FEAT-025, FEAT-008, FEAT-018","Se juega completa con verdad, rendija y exhalación."
+FEAT-028,Final Route C P02→C05,Ruta de juicio y fractura.,"Narrative, Gameplay, Audio, Lighting",M,P0,"FEAT-024, FEAT-025, FEAT-008, FEAT-018","Se juega completa con juicio, negación y golpe seco."
+FEAT-029,Final Route D P10→C06,Ruta de borde y umbral perpetuo.,"Narrative, Gameplay, Audio, Lighting",M,P0,"FEAT-024, FEAT-025, FEAT-008, FEAT-016, FEAT-018","Se juega completa con espera, borde y silencio atento."
+FEAT-030,Final staging pack,"Staging, audio y luz P0 para las 4 rutas finales.","Experience, Audio, Lighting",M,P0,"FEAT-026, FEAT-027, FEAT-028, FEAT-029",Cada ruta final se distingue por imagen y cualidad sonora.
+FEAT-031,Canonical final lines pack,Banco congelado de líneas/remates MVP.,"Writing, Continuity",S,P1,"FEAT-026, FEAT-027, FEAT-028, FEAT-029",Las líneas P0 quedan fijadas para build y QA.
+FEAT-032,Save/load hardening,Persistencia estable hasta final MVP.,"Tech, QA",M,P0,FEAT-030,No se corrompe estado entre sesiones.
+FEAT-033,Performance & stability pass,Optimización base del apartamento + TV + audio + puerta.,"Tech, QA",M,P0,"FEAT-021, FEAT-030",Rinde de forma aceptable en slice interna.
+FEAT-034,Route QA matrix,Matriz de pruebas de ciclos y 4 finales MVP.,"QA Narrativa, Systems",M,P0,FEAT-030,"Casos de prueba y bugs por selector, ruta y estado."
+FEAT-035,Vertical slice internal build,Build interna jugable C01–C06 + 4 finales MVP.,"Production, Tech, QA",L,P0,"FEAT-032, FEAT-033, FEAT-034",Existe build interna coherente y enseñable al equipo.

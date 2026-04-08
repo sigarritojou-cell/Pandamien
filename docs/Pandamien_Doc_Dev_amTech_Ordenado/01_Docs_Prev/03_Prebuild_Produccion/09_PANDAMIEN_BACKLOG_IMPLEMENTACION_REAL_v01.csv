@@ -1,0 +1,60 @@
+Milestone,ID,Epic,Task,Priority,Owner,Depends On,Definition of Done
+M0,BLG-001,Canon & Data,Congelar contrato de variables P0 usando Q.4 y limpiar nombres legacy en runtime/data,P0,Sistemas + Continuidad,-,Existe lista oficial de variables runtime; prefijos y nombres canónicos usados en código y datos.
+M0,BLG-002,Canon & Data,"Definir schema de datos para ciclos, nodos, TV, exterior, contaminación y final",P0,Gameplay Engineer,BLG-001,Schemas versionados; validación básica; datos de ejemplo cargan sin errores.
+M0,BLG-003,Canon & Data,"Definir IDs únicos para ciclos, beats, nodos, triggers, líneas TV y finales",P0,Continuidad + Tech,BLG-001,No hay colisiones de ID; convención documentada.
+M0,BLG-004,Canon & Data,"Crear panel debug de variables, zonas, vínculos y final selectors",P0,Tech,BLG-002,Se pueden inspeccionar y forzar variables clave sin recompilar.
+M0,BLG-005,Canon & Data,Diseñar savegame/profile state mínimo,P0,Tech,BLG-002,"Persisten progreso de ciclo, estado de zonas, vínculos, TV, criatura y flags de final."
+M0,BLG-006,Normalización,Normalizar C/D/E bajo Biblia B y Q.4 para C01–C06,P0,Narrativa + Continuidad,"BLG-001, BLG-003",C01–C06 usan tono y nombres estables; redundancias marcadas o corregidas.
+M0,BLG-007,Normalización,Traducir tablas legacy de efectos a variables canónicas runtime,P0,Sistemas,"BLG-001, BLG-006",Mapa legacy→canónico cerrado y usable por implementación.
+M0,BLG-008,Pipeline,Preparar pipeline simple de ingestión authored (Markdown/JSON manual) para nodos y beats,P1,Tech + Narrativa,"BLG-002, BLG-003",Se pueden importar/actualizar datos authored sin tocar código núcleo.
+M1,BLG-010,Apartamento Core,Montar whitebox final del apartamento con layout canónico jugable,P0,Entorno,BLG-002,"Se recorren salón, dormitorio, baño, cocina, entrada, pasillo y balcón/ventana principal."
+M1,BLG-011,Apartamento Core,"Implementar navegación, colisiones y puntos de interacción base",P0,Gameplay Engineer,BLG-010,"Jugador puede mirar, acercarse, activar, escuchar y usar puntos clave sin bloqueo."
+M1,BLG-012,Apartamento Core,Crear presets de iluminación día/tarde/noche/TV residual,P0,Lighting,BLG-010,Cambios de franja temporal legibles y consistentes con tono.
+M1,BLG-013,Apartamento Core,Montar audio espacial base del piso,P0,Audio,BLG-010,"Nevera, tuberías, tejidos, patio/rellano y ambiente general funcionan por zona y franja."
+M1,BLG-014,Props P0,"Implementar props P0: cama, móvil, TV, sofá, mesa, espejo, lavabo/ducha/WC, nevera/fregadero, puerta principal, felpudo, medicación, 2 props íntimos, 2 de trabajo",P0,Entorno + Interacción,"BLG-010, BLG-011",Todos los props P0 existen y tienen lectura/interacción básica.
+M1,BLG-015,Puerta Sellada,Implementar puerta atrancada + marco como sistema interactivo base,P0,Gameplay Engineer + Entorno,"BLG-010, BLG-011","Puerta tiene presencia, distancia, escucha y estados básicos de reactividad."
+M1,BLG-016,Puerta Sellada,Crear 3–4 estados materiales P0 de marco/puerta,P0,Art + Tech Art,BLG-015,Swaps/overlays funcionan y son legibles.
+M1,BLG-017,Contaminación,Implementar sistema base de contaminación por zonas con 3 niveles legibles,P0,Tech Art + Systems,"BLG-010, BLG-011, BLG-007","Baño, dormitorio, salón y entrada/pasillo cambian de estado por variables."
+M1,BLG-018,Contaminación,Implementar contención parcial P0 (1 acción por ciclo/foco),P0,Gameplay Engineer,BLG-017,Jugador puede contener un foco y el sistema desplaza o amortigua consecuencias sin anularlas.
+M1,BLG-019,Transiciones,Implementar gestor de transición día → noche → cierre → persistencia,P0,Systems + Tech,"BLG-005, BLG-017",El loop avanza y persiste estado sin romper authored.
+M1,BLG-020,Móvil & Comms,Implementar UI diegética mínima de móvil/mensajes/llamadas/audios,P0,UI Diegética + Tech,"BLG-011, BLG-005",Se pueden mostrar beats authored con respuesta directa/evasiva/delay/silence.
+M1,BLG-021,Authored Runtime,Implementar runner de nodos de diálogo y ecos,P0,Gameplay Engineer,"BLG-002, BLG-020","Carga nodos authored, presenta opciones y aplica efectos."
+M1,BLG-022,Authored Runtime,Implementar motor de aplicación de efectos cruzados a variables y zonas,P0,Systems,"BLG-007, BLG-021","Cada opción authored puede tocar vínculo, zona, TV, criatura y puerta."
+M1,BLG-023,TV,Implementar TV runtime base con estados comfort/suggestion/manipulation/residual,P0,TV Designer + Tech,"BLG-011, BLG-012",La TV puede encenderse/apagarse/cambiar estado y emitir líneas por contexto.
+M1,BLG-024,Exterior,"Implementar sistema de umbral/exterior P0: mirilla, puerta principal, rellano sugerido, ventana/balcón, soundscape",P0,Entorno + Audio + Gameplay,"BLG-010, BLG-013, BLG-014","El borde ya funciona como sistema jugable, no sólo decorado."
+M1,BLG-025,Criatura Core,Implementar estado base de criatura: mass/cohesion/visibility + func_* y temper_* mínimos,P0,Systems,"BLG-007, BLG-022","Las variables de criatura existen, cambian y pueden leerse en debug."
+M1,BLG-026,Criatura Core,"Implementar gramática de manifestación P0 no visible: respiración, golpe, sílaba, latido, silencio atento",P0,Audio + Experience,"BLG-025, BLG-015",La puerta puede devolver tipos de retorno distintos según estado.
+M2,BLG-100,Ciclos MVP,Integrar C01 Día authored,P0,Narrativa + Tech,"BLG-020, BLG-021, BLG-022","C01 día se juega completo con madre, amigo, editor y eco de ex."
+M2,BLG-101,Ciclos MVP,Integrar C01 Noche authored,P0,Narrativa + Tech,"BLG-019, BLG-015, BLG-026, BLG-100",C01 noche devuelve primer signo tras puerta y cierra ciclo.
+M2,BLG-102,Ciclos MVP,Integrar C02 Día authored,P0,Narrativa + Tech,"BLG-100, BLG-021, BLG-022",Trabajo coloniza salón y pareja/ex entra leve sin romper loop.
+M2,BLG-103,Ciclos MVP,Integrar C02 Noche authored,P0,Narrativa + Tech,"BLG-101, BLG-026, BLG-102",Puerta articula mejor garganta/sílaba/golpe seco.
+M2,BLG-104,TV MVP,Cargar biblioteca TV P0 para C01–C02,P0,TV Designer,"BLG-023, BLG-100, BLG-102",TV acompaña y empieza a suggestion con líneas aprobadas.
+M2,BLG-105,Exterior MVP,Implementar fenómenos authored P0 de exterior para C01–C02,P1,Exterioridad + Audio,"BLG-024, BLG-100, BLG-102","Paquete, pasos, luz vecina y rellano básico sincronizan con ciclo."
+M3,BLG-110,Ciclos MVP,Integrar C03 Día authored,P0,Narrativa + Tech,"BLG-103, BLG-017, BLG-018",Cuerpo toma el foco; madre/medicación pesan; baño/dormitorio mandan.
+M3,BLG-111,Ciclos MVP,Integrar C03 Noche authored,P0,Narrativa + Tech,"BLG-110, BLG-026",Puerta respira/cuerpo blando/pecho con reactividad térmica o vibración.
+M3,BLG-112,Ciclos MVP,Integrar C04 Día authored,P0,Narrativa + Tech,"BLG-111, BLG-021",Pareja/ex toma presión activa y contamina dormitorio/balcón.
+M3,BLG-113,Ciclos MVP,Integrar C04 Noche authored,P0,Narrativa + Tech,"BLG-112, BLG-026",Puerta late/suplica y el piso padece mal el afecto.
+M3,BLG-114,Art & Audio,Añadir props íntimos y estados P1 para dormitorio/balcón/baño,P1,Art + Audio,"BLG-014, BLG-017, BLG-112","Dormitorio, balcón y baño tienen riqueza suficiente para intimidad/cuerpo."
+M3,BLG-115,TV MVP,Cargar biblioteca TV P0/P1 para C03–C04,P0,TV Designer,"BLG-023, BLG-110, BLG-112",TV suggestion clínica/sentimental funciona sin sonar mágica.
+M4,BLG-120,Ciclos MVP,Integrar C05 Día authored,P0,Narrativa + Tech,"BLG-113, BLG-024",Exterioridad/umbral toma presión activa y entrada/pasillo ganan centralidad.
+M4,BLG-121,Ciclos MVP,Integrar C05 Noche authored,P0,Narrativa + Tech,"BLG-120, BLG-026","La casa enfoca: orientación, pausa dirigida, silencio atento."
+M4,BLG-122,Ciclos MVP,Integrar C06 Día authored,P0,Narrativa + Tech,"BLG-121, BLG-023",TV toma presión activa y mezcla voces sin caos ilegible.
+M4,BLG-123,Ciclos MVP,Integrar C06 Noche authored,P0,Narrativa + Tech,"BLG-122, BLG-026",La puerta ensaya sintaxis defectuosa y contestación rota.
+M4,BLG-124,Exterior P1,Añadir fenómenos authored P1 de umbral y balcón para C05–C06,P1,Exterioridad + Audio,"BLG-024, BLG-120, BLG-122","Mirilla, paso, conversación amortiguada, luz vecina y aire expuesto tienen suficiente variedad."
+M4,BLG-125,TV P1,Cargar biblioteca TV manipulation/residual para C05–C06,P1,TV Designer,"BLG-023, BLG-122",La TV editorializa vigilancia y colonización semántica con control de tono.
+M4,BLG-126,QA Narrativa,Pasada de coherencia ciclo a ciclo C01–C06 bajo Biblia B,P0,Continuidad + QA Narrativa,BLG-100..BLG-123,"Voces, residuos y ecos respetan familias y contaminación verbal."
+M5,BLG-200,Final MVP,Implementar snapshot final y selector de perfil principal MVP,P0,Systems + Tech,"BLG-025, BLG-122, BLG-123",El final lee variables y escoge entre P01/P05/P02/P10.
+M5,BLG-201,Final MVP,Implementar variables locales de confrontación y locks mínimos,P0,Systems,BLG-200,listen/contact/truth/denial/irreversibility/etc. funcionan en runtime.
+M5,BLG-202,Final MVP,Implementar Ruta A: P01 → C01 (La mano y el latido),P0,Narrativa + Tech + Audio,"BLG-200, BLG-201, BLG-015","Ruta jugable completa con contacto, contención, latido y remate."
+M5,BLG-203,Final MVP,Implementar Ruta B: P05 → C02 (La rendija que responde),P0,Narrativa + Tech + Audio,"BLG-200, BLG-201, BLG-015","Ruta jugable completa con diálogo, verdad, rendija y apertura."
+M5,BLG-204,Final MVP,Implementar Ruta C: P02 → C05 (El informe de carne),P0,Narrativa + Tech + Audio,"BLG-200, BLG-201, BLG-015","Ruta jugable completa con juicio, negación/fractura y golpe seco."
+M5,BLG-205,Final MVP,Implementar Ruta D: P10 → C06 (El borde que te sabía),P0,Narrativa + Tech + Audio,"BLG-200, BLG-201, BLG-015, BLG-024","Ruta jugable completa con espera, borde y silencio atento."
+M5,BLG-206,Final MVP,Implementar staging/audio/luz P0 para las 4 rutas finales,P0,Experience + Lighting + Audio,"BLG-202, BLG-203, BLG-204, BLG-205","Cada ruta tiene imagen dominante, cualidad sonora y remate distinguibles."
+M5,BLG-207,Final MVP,Integrar selector de cierre MVP limitado a C01/C02/C05/C06,P0,Systems,BLG-201,No se cuelan C03/C04; selección es coherente y depurable.
+M5,BLG-208,Final MVP,Pulir y fijar líneas/remates MVP canónicos,P1,Narrativa + Continuidad,"BLG-202, BLG-203, BLG-204, BLG-205",Banco de líneas P0 congelado para build MVP.
+M6,BLG-300,Hardening,Implementar guardado/carga estable de progreso hasta final MVP,P0,Tech,"BLG-005, BLG-123, BLG-207",Se puede salir y volver sin corromper estado.
+M6,BLG-301,Hardening,Pasada de performance y estabilidad del apartamento + TV + audio + puerta,P0,Tech + QA,"BLG-123, BLG-206",FPS/estabilidad aceptables en escenas base y finales.
+M6,BLG-302,Hardening,Matriz de test de rutas: 4 perfiles × 4 cierres MVP válidos,P0,QA Narrativa + Systems,BLG-207,"Hay casos de prueba y bugs clasificados por selector, nodos y remates."
+M6,BLG-303,Hardening,Pasada de consistencia de variables y nomenclatura en código/datos,P0,Sistemas + Continuidad,BLG-300,No quedan nombres legacy peligrosos.
+M6,BLG-304,Hardening,Build vertical slice interna: C01–C06 + salto controlado a final MVP,P0,Producción + Tech,"BLG-123, BLG-206, BLG-300",Existe build jugable interna que demuestra loop completo y 4 finales MVP.
+M6,BLG-305,Fase 2,"Preparar cola post-MVP: C03/C04 finales, perfiles P03/P04/P06/P07/P08/P09, C07–C08 authored fino, assets P2",P2,Producción,BLG-304,Post-MVP priorizado sin contaminar el MVP base.
